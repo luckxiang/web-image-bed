@@ -1,0 +1,193 @@
+.login-page{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.login-left{
+  flex:1;
+  height: 100%;
+  flex-shrink:1;
+  background: url(../images/bg_plan3.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-right{
+  width: 700px;
+  overflow: auto;
+  height: 100%;
+  flex-shrink:0;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 24px 0px 
+  rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.login-copyright{
+  font-size: 14px;
+  text-align: center;
+  position: fixed;
+  bottom: 20px;
+  width: 700px;
+  color: rgba(0,0,0,.35);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.login-head{
+  text-align: center;
+  color: #40a9ff;
+    font-size: 45px;
+}
+.login-line{
+  height: 1px;
+  width: 368px;
+  margin: 20px auto;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.login-content{
+    margin: 0 auto ;
+    width: 368px;
+}
+.login-title{
+    font-family: PingFangSC-Regular;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: rgba(0, 0, 0, 0.85);
+}
+.login-input-ctrl{
+    line-height: 39.9999px;
+    position: relative;
+    zoom: 1;
+}
+.login-input-affix-wrapper{
+    font-family: Chinese Quote,-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    color: rgba(0,0,0,.25);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.login-input-prefix{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 0;
+    color: rgba(0,0,0,.25);
+    left: 12px;
+}
+.login-input{
+    padding-left: 30px;
+    position: static;
+    touch-action: manipulation;
+    color: rgba(0, 0, 0, 0.65);
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+    background-image: none;
+    width: 336px;
+    height: 38px;
+}
+.login-input::-webkit-input-placeholder{
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.login-input:hover {
+    border-color: #36cfc9;
+    border-right-width: 1px !important;
+}
+
+.login-input:focus {
+    border-color: #36cfc9;
+    box-shadow: 0 0 0 2px rgba(54,207,201, 0.2);
+    border-right-width: 1px !important;
+}
+.login-button{
+    color: #fff;
+    background-color: #36cfc9;
+    border-color: #36cfc9;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.035);
+    border-radius: 4px;
+    width: 100%;
+    height: 40px;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 0 15px;
+    font-size: 16px;
+    outline: 0;
+    line-height: 1.5;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+
+.login-button:hover{
+    color: #fff;
+    background-color: #68d6d2;
+    border-color: #68d6d2;
+}
+
+.login-button:active{
+    color: #fff;
+    background-color: #1bc1bb;
+    border-color: #1bc1bb;
+}
+.login-link{
+font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+font-stretch: normal;
+line-height: 22px;
+letter-spacing: 0px;
+color: rgba(0, 0, 0, 0.25);
+cursor: pointer;
+}
+.login-link span:hover{
+  color: rgba(54,207,201, 1)
+}
+
+.login-title1{
+  font-family: PingFangSC-Medium;
+  font-size: 50px;
+  width: 599px;
+  height: 70px;
+  line-height: 70px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #ffffff;
+}
+
+.login-title-line{
+  width: 80px;
+  height: 8px;
+  background-color: #ffffff;
+  margin: 16px 0 8px 0;
+}
+.login-title2{
+  height: 76px;
+  line-height: 76px;
+  font-family: MarkPro;
+  font-size: 50px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #ffffff;
+}

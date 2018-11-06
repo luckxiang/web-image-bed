@@ -1,0 +1,21 @@
+.ant-upload-drag-icon{
+  text-align: center;
+}
+.ant-upload-drag-icon i{
+  font-size: 55px;
+}
+.ant-upload-text{
+  text-align: center;
+}
+.upload-group{
+  width: 750px;
+  height: 300px;
+  margin-top: 60px;
+}
+.homePage{
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
