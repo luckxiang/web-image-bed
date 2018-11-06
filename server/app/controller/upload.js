@@ -4,6 +4,7 @@ const Controller = require('egg').Controller
 const awaitWriteStream = require('await-stream-ready').write
 const sendToWormhole = require('stream-wormhole')
 const download = require('image-downloader')
+const dayjs = require('dayjs');
 
 class UploadController extends Controller {
   constructor (ctx){
@@ -24,9 +25,13 @@ class UploadController extends Controller {
     const attachment = new this.ctx.model.Attachment
     attachment.extname = extname
     attachment.filename = filename
-    attachment.url = `/uploads/${attachment._id.toString()}${extname}`
+    attachment.url = `/uploads/${dayjs().format('YYYYMMDD')}/${attachment._id.toString()}${extname}`
     // 组装参数 stream
-    const target = path.join(this.config.baseDir, 'app/public/uploads', `${attachment._id.toString()}${attachment.extname}`)
+    let filePath = `app/public/uploads/${dayjs().format('YYYYMMDD')}`
+    if(!fs.existsSync(filePath)){
+      fs.mkdirSync(filePath)
+    }
+    const target = path.join(this.config.baseDir,filePath , `${attachment._id.toString()}${attachment.extname}`)
     const writeStream = fs.createWriteStream(target)
     // 文件处理，上传到云存储等等
     try {

@@ -9,7 +9,6 @@ class UploadService extends Service {
   async create(payload) {
     const { ctx, service } = this
     payload.createdUser = ctx.state.user.data._id
-    console.log("alan",payload)
     return this.ctx.model.Attachment.create(payload) 
   }
 
