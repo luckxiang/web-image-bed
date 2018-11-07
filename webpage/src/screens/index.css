@@ -28,3 +28,23 @@
 .upload-img-item{
   padding-bottom: 60px;
 }
+.log-page{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.log-group{
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+  padding: 0 40px;
+  flex-wrap: wrap;
+}
+.nothing{
+  width: 220px;
+}
+.log-group:after {
+    content: "";
+    flex: auto;
+ }

@@ -41,7 +41,7 @@ class Home extends Component {
     let imgs = []
     for(let img of this.state.imgs){
       let imgUrl = http.getUrl().replace('/api','')+"image/"+img._id
-      imgs.push(<UploadItem style={{maringTop:'30px'}} img={imgUrl}></UploadItem>)
+      imgs.push(<UploadItem key={img._id} style={{maringTop:'30px'}} img={imgUrl}></UploadItem>)
     }
     return imgs
   }
@@ -51,6 +51,7 @@ class Home extends Component {
       <div className="homePage">
         <div className="upload-group" style={{height:this.state.uploadHeight}}>
           <Dragger 
+            accept="image/*"
             showUploadList = {false}
             name="pic"
             action = {http.getUrl()+"upload"}

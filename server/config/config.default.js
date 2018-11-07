@@ -41,7 +41,7 @@ module.exports = appInfo => {
       enable:false,
       ignoreJSON:true,
     },
-    domainWhiteList: [ 'http://langwenda.com:8002','http://localhost:3002'],
+    domainWhiteList: [ 'http://localhost.com:8011'],
   }
   config.cors = {
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'

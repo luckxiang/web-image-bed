@@ -23,8 +23,6 @@ class UploadItem extends Component {
           onCopy={() => message.success(`已复制到剪贴板`)}>
             <Button className='upload-img-button'>MarkDown</Button>
           </CopyToClipboard>
-
-          <Button className='upload-img-button'>打开</Button>
         </div>
       </div>
     );

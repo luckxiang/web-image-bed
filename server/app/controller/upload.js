@@ -233,7 +233,7 @@ class UploadController extends Controller {
       const hasFile = fs.existsSync(target_U);
       if(hasFile){
         this.ctx.attachment(res.filename);
-        this.ctx.set('Content-Type','images/*');
+        this.ctx.set('Content-Type','image/*');
         this.ctx.body = fs.createReadStream(target_U);
       }else{
         this.ctx.throw(404, '不存在的文件')

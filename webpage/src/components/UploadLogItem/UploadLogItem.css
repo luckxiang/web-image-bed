@@ -1,0 +1,19 @@
+.upload-log-group{
+  width: 220px;
+  display: inline-block;
+  padding: 10px;
+}
+.upload-log-img{
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+  background-size: contain;
+}
+
+.upload-log-status{
+  margin-top: 10px;
+  display: flex;
+}
+.upload-log-button{
+  margin-left: 1px;
+}

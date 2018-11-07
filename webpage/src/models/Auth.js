@@ -12,6 +12,14 @@ class AuthModel {
       }
     })
   }
+
+  getUploadLog(){
+    return http.get('upload')
+  }
+
+  deleteUpload(id){
+    return http.delete('upload/'+id)
+  }
 }
 
 const authModel = new AuthModel()

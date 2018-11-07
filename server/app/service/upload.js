@@ -19,7 +19,7 @@ class UploadService extends Service {
     if (!attachment) {
       ctx.throw(404, 'attachment not found')
     }else{
-      const target = path.join(this.config.baseDir, 'app/public/uploads', `${attachment._id}${attachment.extname}`)
+      const target = path.join(this.config.baseDir, 'app/public', `${attachment.url}`)
       fs.unlinkSync(target)
     }
     return ctx.model.Attachment.findByIdAndRemove(_id)

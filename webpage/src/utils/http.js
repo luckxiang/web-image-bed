@@ -1,4 +1,5 @@
 import { message } from 'antd';
+import tokenUtil from './TokenUtil'
 const base_url = "http://langwenda.com:7002/api/"
 const codeMessage={
   200: '服务器成功返回请求的数据。',
@@ -30,7 +31,8 @@ const request = (url: string, config: any) => {
   let headers = {headers:{
     'X-Requested-With': 'XMLHttpRequest',
     "Accept": "application/json",
-    "Content-Type": "application/json; charset=UTF-8"
+    "Content-Type": "application/json; charset=UTF-8",
+    "Authorization":`Bearer ${tokenUtil.getToken()}`
   }}
 
   let request = {...config,...headers}
