@@ -221,6 +221,27 @@ class UploadController extends Controller {
     // 设置响应内容和响应状态码
     ctx.helper.success({ctx})
   }
+
+  async download(){
+    const { ctx, service } = this
+    // 组装参数
+    const { id } = ctx.params
+    const res = await service.upload.show(id)
+    if(res){
+      const target_U = path.join(this.config.baseDir, 'app/public', `${res.url}`)
+      console.log('filePath',target_U)
+      const hasFile = fs.existsSync(target_U);
+      if(hasFile){
+        this.ctx.attachment(res.filename);
+        this.ctx.set('Content-Type','images/*');
+        this.ctx.body = fs.createReadStream(target_U);
+      }else{
+        this.ctx.throw(404, '不存在的文件')
+      }
+    }else{
+      this.ctx.throw(404, '未找到该文件')
+    }
+  }
 }
 
 

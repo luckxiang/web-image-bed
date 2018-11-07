@@ -4,7 +4,6 @@
  */
 module.exports = app => {
   const { router, controller, swagger } = app
-  require('./swagger')(app);
   router.get('/', controller.home.index)
 
   // userAccess
@@ -17,7 +16,7 @@ module.exports = app => {
   router.put('/api/user/access/resetPsw', app.jwt, controller.userAccess.resetPsw)
 
   router.delete('/api/user',app.jwt, controller.user.removes)
-  router.resources('user', '/api/user', controller.user)
+  router.resources('user', '/api/user',app.jwt, controller.user)
 
 
 
@@ -32,4 +31,7 @@ module.exports = app => {
   router.get('/api/upload',app.jwt, controller.upload.index)
   router.delete('/api/upload',app.jwt, controller.upload.removes)
   // router.resources('upload', '/api/upload', controller.upload)
+
+  //下载文件
+  router.get('/image/:id',controller.upload.download)
 }

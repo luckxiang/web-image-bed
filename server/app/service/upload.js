@@ -74,7 +74,7 @@ class UploadService extends Service {
       video: ['.mov', '.mp4', '.avi'],
       audio: ['.mp3', '.wma', '.wav', '.ogg', '.ape', '.acc']
     }
-
+    const { ctx, service } = this
     let { currentPage, pageSize, isPaging, search, kind } = payload
     let res = []
     let count = 0
@@ -82,35 +82,35 @@ class UploadService extends Service {
     if(isPaging) {
       if(search) {
         if (kind) {
-          res = await this.ctx.model.Attachment.find({filename: { $regex: search }, extname: { $in: attachmentKind[`${kind}`]} }).skip(skip).limit(Number(pageSize)).sort({ createdAt: -1 }).exec()
+          res = await this.ctx.model.Attachment.find({createdUser:ctx.state.user.data._id,filename: { $regex: search }, extname: { $in: attachmentKind[`${kind}`]} }).skip(skip).limit(Number(pageSize)).sort({ createdAt: -1 }).exec()
         }else{
-          res = await this.ctx.model.Attachment.find({filename: { $regex: search } }).skip(skip).limit(Number(pageSize)).sort({ createdAt: -1 }).exec()
+          res = await this.ctx.model.Attachment.find({createdUser:ctx.state.user.data._id,filename: { $regex: search } }).skip(skip).limit(Number(pageSize)).sort({ createdAt: -1 }).exec()
         }
         count = res.length
       } else {
         if (kind) {
-          res = await this.ctx.model.Attachment.find({ extname: { $in: attachmentKind[`${kind}`]} }).skip(skip).limit(Number(pageSize)).sort({ createdAt: -1 }).exec()
-          count = await this.ctx.model.Attachment.count({ extname: { $in: attachmentKind[`${kind}`]} }).exec()
+          res = await this.ctx.model.Attachment.find({ createdUser:ctx.state.user.data._id,extname: { $in: attachmentKind[`${kind}`]} }).skip(skip).limit(Number(pageSize)).sort({ createdAt: -1 }).exec()
+          count = await this.ctx.model.Attachment.count({ createdUser:ctx.state.user.data._id,extname: { $in: attachmentKind[`${kind}`]} }).exec()
         }else{
-          res = await this.ctx.model.Attachment.find({}).skip(skip).limit(Number(pageSize)).sort({ createdAt: -1 }).exec()
-          count = await this.ctx.model.Attachment.count({}).exec()
+          res = await this.ctx.model.Attachment.find({createdUser:ctx.state.user.data._id}).skip(skip).limit(Number(pageSize)).sort({ createdAt: -1 }).exec()
+          count = await this.ctx.model.Attachment.count({createdUser:ctx.state.user.data._id}).exec()
         }
       }
     } else {
       if(search) {
         if (kind) {
-          res = await this.ctx.model.Attachment.find({filename: { $regex: search }, extname: { $in: attachmentKind[`${kind}`]} }).sort({ createdAt: -1 }).exec()
+          res = await this.ctx.model.Attachment.find({createdUser:ctx.state.user.data._id,filename: { $regex: search }, extname: { $in: attachmentKind[`${kind}`]} }).sort({ createdAt: -1 }).exec()
         }else{
-          res = await this.ctx.model.Attachment.find({filename: { $regex: search }}).sort({ createdAt: -1 }).exec()
+          res = await this.ctx.model.Attachment.find({createdUser:ctx.state.user.data._id,filename: { $regex: search }}).sort({ createdAt: -1 }).exec()
         }
         count = res.length
       } else {
         if (kind) {
-          res = await this.ctx.model.Attachment.find({extname: { $in: attachmentKind[`${kind}`]} }).sort({ createdAt: -1 }).exec()
-          count = await this.ctx.model.Attachment.count({ extname: { $in: attachmentKind[`${kind}`]} }).exec()
+          res = await this.ctx.model.Attachment.find({createdUser:ctx.state.user.data._id,extname: { $in: attachmentKind[`${kind}`]} }).sort({ createdAt: -1 }).exec()
+          count = await this.ctx.model.Attachment.count({ createdUser:ctx.state.user.data._id,extname: { $in: attachmentKind[`${kind}`]} }).exec()
         }else{
-          res = await this.ctx.model.Attachment.find({}).sort({ createdAt: -1 }).exec()
-          count = await this.ctx.model.Attachment.count({}).exec()
+          res = await this.ctx.model.Attachment.find({createdUser:ctx.state.user.data._id}).sort({ createdAt: -1 }).exec()
+          count = await this.ctx.model.Attachment.count({createdUser:ctx.state.user.data._id}).exec()
         }
       }
     }

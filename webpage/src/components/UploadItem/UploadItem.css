@@ -1,0 +1,20 @@
+.upload-preview{
+  height: 250px;
+  width: 750px;
+  overflow: hidden;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.upload-item-group{
+  width: 750px;
+  margin-top: 30px;
+}
+.upload-status{
+  margin-top: 10px;
+  display: flex;
+}
+.upload-img-button{
+  margin-left: 10px;
+}
