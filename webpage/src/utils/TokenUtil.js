@@ -5,14 +5,23 @@ class TokenUtil {
 
   isLogin(){
     if(this.getToken()){
-      return true
+      let exp = this.get('expires')
+      if(exp && new Date(exp) > new Date()){
+        return true
+      }else{
+        return false
+      }
     }else{
       return false
     }
   }
   getToken(){
-    const equalities = document.cookie.split('; ');
     const key = this.tokenCookieName
+    return this.get(key)
+  }
+
+  get(key){
+    const equalities = document.cookie.split('; ');
     for (let i = 0; i < equalities.length; i++) {
       if (!equalities[i]) {
           continue;

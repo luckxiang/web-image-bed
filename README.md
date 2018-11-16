@@ -5,6 +5,6 @@ react+antd
 node.js+egg+mongo
 ### 系统截图
 #### 登录页
-![](http://langwenda.com:7002/image/5be286c293cb194ab8c9d3cc)
+![](http://dada-image-bed.oss-cn-shenzhen.aliyuncs.com/18-11-16/60297306.jpg)
 #### 主页
-![](http://langwenda.com:7002/image/5be286c893cb194ab8c9d3cd)
+![](http://dada-image-bed.oss-cn-shenzhen.aliyuncs.com/18-11-16/23187311.jpg)
