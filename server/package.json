@@ -12,11 +12,11 @@
     "egg-jwt": "^2.2.0",
     "egg-mongoose": "^2.1.1",
     "egg-scripts": "^2.1.0",
-    "egg-swagger2": "^1.0.4",
     "egg-validate": "^1.0.0",
     "image-downloader": "^3.3.0",
     "mocha": "^4.0.1",
     "moment": "^2.20.1",
+    "production": "^0.0.2",
     "stream-to-array": "^2.3.0",
     "stream-wormhole": "^1.0.3"
   },
